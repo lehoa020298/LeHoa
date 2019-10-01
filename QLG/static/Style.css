@@ -1,0 +1,36 @@
+﻿img .banner{
+    width:1250px;
+    height:250px;
+}
+
+p {
+    color: darkmagenta;
+    font-size: larger;
+    font-weight: bold;
+}
+
+form{
+    width:1000px;
+}
+
+
+.item h4 {
+    color: darkred;
+    font-weight: bold;
+}
+
+.footer {
+    text-align:center;
+    background-color:burlywood;
+    padding:30px;
+    width:100%;
+}
+
+
+.container{
+    width:1000px;
+    padding-left:5px;
+    margin:auto;
+    float:left;
+}
+

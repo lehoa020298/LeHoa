@@ -1,0 +1,111 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="QLG.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>LeeHoa</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="static/Style.css" rel="stylesheet" />
+    
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+            background-color: burlywood;
+            padding: 30px;
+            width: 127%;
+        }
+        .auto-style2 {
+            width: 1239px;
+            max-width: 1140px;
+            min-width: 992px;
+            float: left;
+            margin: auto;
+            padding-left: 5px;
+            padding-right: 15px;
+        }
+        .auto-style3 {
+            width: 888px;
+        }
+        .auto-style4 {
+            width: 408px;
+        }
+        .auto-style5 {
+            height: 284px;
+            width: 1100px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        
+            <img src="images/banner.jpg" class="auto-style5" />
+        
+        <div class="auto-style2">
+            <table class="fixed">
+                <colgroup>
+                    <col/>
+                    <col style="width:250px"/>
+                </colgroup>
+                <tr>
+                    <th class="auto-style3"></th>
+                    <th class="auto-style4"></th>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <nav class="navbar navbar-expand-sm bg-light">
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="gadacbiet.aspx">Trang chủ</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Diễn đàn hội nông dân</a>
+                                </li>                               
+                                <li class="nav-item">
+                                    <a class="nav-link" href="GioHang.aspx">Giỏ hàng</a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </td>
+                    <td class="auto-style4">
+                        <asp:Login ID="Login1" runat="server" OnAuthenticate="Login1_Authenticate" BorderColor="#3366FF" BorderStyle="Dashed"></asp:Login>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td class="auto-style4">
+                        <p>DANH MỤC GÀ:</p>
+                        <asp:DataList ID="DataList1" runat="server" RepeatColumns="1" OnSelectedIndexChanged="DataList_SelectedIndexChanged">
+                            <ItemTemplate>
+                                <div class="item">
+
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CommandArgument='<%# Eval("maloai") %>' OnClick="LinkButton1_Click" Text='<%# Eval("tenloai") %>'></asp:LinkButton><br />
+
+                                </div>
+                            </ItemTemplate>
+                        </asp:DataList>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td class="auto-style3"><div class="auto-style1">&copy; All rights reserved on Gahub.com</div></td>
+                </tr>
+
+            </table>
+             
+            
+        </div>
+        
+    </form>
+</body>
+</html>
